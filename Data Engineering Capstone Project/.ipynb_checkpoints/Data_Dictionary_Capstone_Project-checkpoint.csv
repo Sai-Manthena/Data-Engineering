@@ -1,0 +1,59 @@
+﻿Data Dictionary,,,
+,,,
+Field Name ,Description,Source ,Example
+  Immig_Event_id,Unique Primary Key,Derived using spark sql,245
+  visitor_id,Unique id for Each Vistor entering the country.,Immigration data file ,5748517
+  Date,Date Field for each record derived based on the arrival date,Immigration data file ,4/25/2016
+  month,Month Field for each record derived based on the arrival date,Immigration data file ,4
+  year,Year Field for each record derived based on the arrival date,Immigration data file ,2016
+  i94mode,"Mode of Transportation Visitor Entered the country
+/* I94MODE - There are missing values as well as not reported (9) */
+",Immigration data file ,"value i94model
+	1 = 'Air'
+	2 = 'Sea'
+	3 = 'Land'
+	9 = 'Not reported'"
+  i94visa,"Visa type through which customer visited the country
+/* I94VISA - Visa codes collapsed into three categories:
+   1 = Business
+   2 = Pleasure
+   3 = Student",Immigration data file ,1
+  Match_flag,Match of arrival and departure records,Immigration data file ,M
+  i94addr,State of Entry for the Vistor,Immigration data file ,"CA,FL etc"
+,,,
+,,,
+,,,
+Data_Immig_dtls,,,
+Field Name ,Description,Source ,Example
+  visitor_id,Unique id for Each Vistor entering the country,Immigration data file,5748517
+  i94yr,Year Vistor Entered the country,Immigration data file,2016
+  i94mon,Month Vistor Entered the country,Immigration data file,4
+  arrival_date,Date  Vistor Entered the country,Immigration data file,2016-04-14
+  i94mode,"Mode of Transportation Visitor Entered the country.
+ Modifyed field to display meaningfull names",Immigration data file,"Air, Sea etc"
+  departure_date,Date  Vistor Departed the country,Immigration data file,2016-07-04
+  Age,Age of Visitor ,Immigration data file,45
+  i94visa,"Visa mode  through which customer visited the country.
+ Modifyed field to display meaningfull names",Immigration data file,"Business, Student"
+  create_dt ,Date Record has been added to Immigration file,Immigration data file,20160414
+  visapost,Department of State where where Visa was issued,Immigration data file,SYD
+  birthyr,4 digit year of birth,Immigration data file,
+  gender,Visitor Sex,Immigration data file,"M,F"
+  airline,Airline used to arrive in U.S.,Immigration data file,"AC,UA"
+  visatype,Class of admission legally admitting the Visitors to temporarily stay in U.S,Immigration data file,"B1,B2 etc"
+,,,
+Dim_State_dtls,,,
+Field Name ,Description,Source ,Example
+  state_id,Unique Primary Key,Derived using spark sql,245
+  state,State Name in USA,City Demographic,New York
+  State_Code,Two Digit State Code,City Demographic,NY
+  city,City Name associated with State,City Demographic,Albany
+,,,
+Data_Table,,,
+Field Name ,Description,Source ,Example
+ Date,Date Field for each record derived based on the arrival date,Immigration data file ,2016-04-25
+  day,Day of the month,Immigration data file ,25
+  week,Week of the Year,Immigration data file ,16
+  month,Month Field for each record derived based on the arrival date,Immigration data file ,4
+  year,Year Field for each record derived based on the arrival date,Immigration data file ,2016
+  weekday,gives weekday of the date,Immigration data file ,5
